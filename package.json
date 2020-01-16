@@ -20,7 +20,7 @@
   ],
   "author": {
     "name": "Jonas Noack & Nico Scordialo",
-    "email": "jonas.noack@student.hpi.de",
+    "email": "jonas.noack@student.hpi.de"
   },
   "license": "MIT",
   "homepage": "https://github.com/active-expressions/babel-plugin-aexpr-proxies",
