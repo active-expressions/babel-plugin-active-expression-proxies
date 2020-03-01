@@ -2,9 +2,8 @@ const AEXPR_IDENTIFIER_NAME = 'aexpr';
 const FLAG_SHOULD_NOT_REWRITE_IDENTIFIER = Symbol('FLAG: should not rewrite identifier');
 
 export default function({ types: t, template, traverse }) {
-  
   const GENERATED_IMPORT_IDENTIFIER = Symbol("generated import identifier");
-
+  
   function addCustomTemplate(file, name) {
     let declar = file.declarations[name];
     if (declar) return declar;
@@ -93,7 +92,6 @@ export default function({ types: t, template, traverse }) {
             },
             
             NewExpression(path) {
-              
               replaceNode(path, path.node.callee.name)
 
             },
@@ -103,7 +101,6 @@ export default function({ types: t, template, traverse }) {
             },
             
             Identifier(path) {
-              console.log(path.node.name);
               if (path.node[FLAG_SHOULD_NOT_REWRITE_IDENTIFIER]) {
                 return;
               }
